@@ -64,33 +64,21 @@
             <pose>0 0 0 1.570796 -0.32 0</pose>
             <!-- <pose>0 0 0 0 0 0</pose> -->
             <visualize>false</visualize>
-            <update_rate>30</update_rate>
+            <update_rate>10</update_rate>
             <ray>
                 <scan>
                     <horizontal>
-                        <samples>1024</samples>
+                        <samples>2056</samples>
                         <resolution>1</resolution>
                         <min_angle>-3.14159265359</min_angle>
                         <max_angle>3.14159265359</max_angle>
                     </horizontal>
                     <vertical>
-                        <samples>16</samples>
+                        <samples>32</samples>
                         <resolution>1</resolution>
                         <min_angle>-0.785398</min_angle>
                         <max_angle>0.785398</max_angle>
                     </vertical>
-                    <!-- <horizontal>
-                        <samples>1024</samples>
-                        <resolution>1</resolution>
-                        <min_angle>-3.14159265359</min_angle>
-                        <max_angle>3.14159265359</max_angle>
-                    </horizontal>
-                    <vertical>
-                        <samples>16</samples>
-                        <resolution>1</resolution>
-                        <min_angle>-0.261799387799</min_angle>
-                        <max_angle> 0.261799387799</max_angle>
-                    </vertical> -->
                 </scan>
                 <range>
                     <min>0.05</min>
@@ -104,7 +92,7 @@
                 </noise>
             </ray>
             <plugin name="gazebo_ros_laser" filename="libgazebo_ros_velodyne_laser.so">
-                <topicName>/go2_gazebo/velodyne_points</topicName>
+                <topicName>/go2_gazebo/point_cloud/raw</topicName>
                 <frameName>lidar_link</frameName>
             </plugin>
         </sensor>
